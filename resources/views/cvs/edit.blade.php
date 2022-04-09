@@ -17,12 +17,17 @@
 
                     <div class="row">
                         <label class="col-4" for="name">Name</label>
-                        <input class="col-8 mb-3" type="text" id="name" name="name">
+                        <input class="col-8 mb-3" type="text" id="name" name="name" value="{{ $cv->name }}">
                     </div>
 
                     <div class="row">
                         <label class="col-4" for="email">Email</label>
                         <input class="col-8 mb-3" type="email" id="email" name="email">
+                    </div>
+
+                    <div class="row">
+                        <label class="col-4" for="keyprogramming">Key Programming</label>
+                        <textarea name="keyprogramming" id="keyprogramming" cols="30" rows="3" class="col-8 mb-3"></textarea>
                     </div>
 
                 </form>
