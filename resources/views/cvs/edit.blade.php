@@ -22,12 +22,12 @@
 
                     <div class="row">
                         <label class="col-4" for="email">Email</label>
-                        <input class="col-8 mb-3" type="email" id="email" name="email">
+                        <input class="col-8 mb-3" type="email" id="email" name="email" value="{{ $cv->email }}">
                     </div>
 
-                    <div class="row">
+                    <div class=" row">
                         <label class="col-4" for="keyprogramming">Key Programming</label>
-                        <textarea name="keyprogramming" id="keyprogramming" cols="30" rows="3" class="col-8 mb-3"></textarea>
+                        <textarea name="keyprogramming" id="keyprogramming" cols="30" rows="3" class="col-8 mb-3">{{ $cv->keyprogramming }}</textarea>
                     </div>
 
                 </form>
