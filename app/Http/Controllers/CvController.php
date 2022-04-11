@@ -14,8 +14,28 @@ class CvController extends Controller
         return view('cvs.index', ['cvs' => $cvs]);
     }
 
+    public function create()
+    {
+        return view('cvs.create');
+    }
+
     public function edit(Cv $cv)
     {
         return view('cvs.edit', ['cv' => $cv]);
+    }
+
+    public function update(CV $cv)
+    {
+        request()->validate([
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+
+        $cv->update([
+            'name' => request('name'),
+            'email' => request('email'),
+            'keyprogramming' => request('keyprogramming'),
+        ]);
+        return redirect('/cvs');
     }
 }
