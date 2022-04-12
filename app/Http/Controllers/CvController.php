@@ -19,6 +19,22 @@ class CvController extends Controller
         return view('cvs.create');
     }
 
+    public function store()
+    {
+        request()->validate([
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+
+        Cv::create([
+            'name' => request('name'),
+            'email' => request('email'),
+            'keyprogramming' => request('keyprogramming'),
+        ]);
+
+        return redirect('/cvs');
+    }
+
     public function edit(Cv $cv)
     {
         return view('cvs.edit', ['cv' => $cv]);
