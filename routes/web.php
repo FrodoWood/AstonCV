@@ -17,5 +17,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/cvs', [CvController::class, 'index'])->name('cvs');
 Route::post('/cvs', [CvController::class, 'store']);
 Route::get('/cvs/create', [CvController::class, 'create'])->name('createCV');
+Route::get('/cvs/{cv}/show', [CvController::class, 'show'])->name('showCV');
 Route::get('/cvs/{cv}/edit', [CvController::class, 'edit'])->name('editCV');
 Route::put('cvs/{cv}', [CvController::class, 'update'])->name('updateCV');

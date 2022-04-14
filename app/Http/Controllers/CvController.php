@@ -14,6 +14,11 @@ class CvController extends Controller
         return view('cvs.index', ['cvs' => $cvs]);
     }
 
+    public function show(Cv $cv)
+    {
+        return view('cvs.show', ['cv' => $cv]);
+    }
+
     public function create()
     {
         return view('cvs.create');
