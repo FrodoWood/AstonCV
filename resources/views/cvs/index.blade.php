@@ -16,7 +16,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <a href="{{route('editCV', ['cv'=>$cv])}}" class="card-header text-capitalize">{{ $cv->name }}</a>
+                <a href="{{route('editCV', ['cv'=>$cv])}}" class="card-header text-capitalize text-decoration-none link-dark">{{ $cv->name }}</a>
 
                 <div class="card-body">
                     <!--  Display cvs here -->

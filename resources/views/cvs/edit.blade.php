@@ -19,11 +19,27 @@
                         <label class="col-4" for="name">Name</label>
                         <input class="col-6 mb-3" type="text" id="name" name="name" value="{{ $cv->name }}">
                     </div>
+                    @error('name')
+                    <div class="row px-2">
+                        <div class="col-4"></div>
+                        <span class="col-6 mb-3 alert alert-danger fs-6">
+                            {{ $message }}
+                        </span>
+                    </div>
+                    @enderror
 
                     <div class="row px-2">
                         <label class="col-4" for="email">Email</label>
                         <input class="col-6 mb-3" type="email" id="email" name="email" value="{{ $cv->email }}">
                     </div>
+                    @error('email')
+                    <div class="row px-2">
+                        <div class="col-4"></div>
+                        <span class="col-6 mb-3 alert alert-danger fs-6">
+                            {{ $message }}
+                        </span>
+                    </div>
+                    @enderror
 
                     <div class=" row px-2">
                         <label class="col-4" for="keyprogramming">Key Programming</label>
