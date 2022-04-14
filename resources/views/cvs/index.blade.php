@@ -1,13 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>CVs</h1>
+            <a class="btn btn-primary my-4" href="{{route('createCV')}}" role="button">Create CV</a>
+        </div>
+    </div>
+</div>
 
 @foreach($cvs as $cv)
+
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-capitalize">{{ $cv->name }}</div>
+                <a href="{{route('editCV', ['cv'=>$cv])}}" class="card-header text-capitalize">{{ $cv->name }}</a>
 
                 <div class="card-body">
                     <!--  Display cvs here -->

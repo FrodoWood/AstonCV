@@ -22,6 +22,11 @@
                     <div class="row px-2">
                         <label class="col-4" for="email">Email</label>
                         <input class="col-6 mb-3" type="email" id="email" name="email">
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
 
                     <div class=" row px-2">
