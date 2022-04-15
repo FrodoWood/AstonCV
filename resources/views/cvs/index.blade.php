@@ -20,13 +20,44 @@
 
                 <div class="card-body">
                     <!--  Display cvs here -->
-                    <div class="container flex">
+                    <!-- <div class="container flex">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><strong>Name:</strong> {{$cv->name}}</li>
+                            <li class="list-group-item text-capitalize"><strong>Name:</strong> {{$cv->name}}</li>
                             <li class="list-group-item"><strong>Email:</strong> {{$cv->email}}</li>
                             <li class="list-group-item"><strong>Key programming:</strong> {{$cv->keyprogramming}}</li>
                         </ul>
+                    </div> -->
+
+                    <!-- Custom table -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4 text-capitalize">
+                                <strong>Name:</strong>
+                            </div>
+                            <div class="col-8 text-capitalize">
+                                {{$cv->name}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-4">
+                                <strong>Email:</strong>
+                            </div>
+                            <div class="col-8">
+                                {{$cv->email}}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-4">
+                                <strong>Key programming:</strong>
+                            </div>
+                            <div class="col-8">
+                                {{$cv->keyprogramming}}
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
