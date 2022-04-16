@@ -49,13 +49,16 @@ class CvController extends Controller
     {
         request()->validate([
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required | unique:cvs',
         ]);
 
         $cv->update([
             'name' => request('name'),
             'email' => request('email'),
             'keyprogramming' => request('keyprogramming'),
+            'profile' => request('profile'),
+            'education' => request('education'),
+            'URLlinks' => request('URLlinks'),
         ]);
         return redirect('/cvs');
     }
