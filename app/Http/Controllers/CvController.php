@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cv;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class CvController extends Controller
 {
@@ -58,7 +59,10 @@ class CvController extends Controller
     {
         request()->validate([
             'name' => 'required',
-            'email' => 'required | unique:cvs',
+            'email' => [
+                'required',
+                Rule::unique('cvs')->ignore($cv),
+            ]
         ]);
 
         $cv->update([
