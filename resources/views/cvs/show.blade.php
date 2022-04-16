@@ -55,7 +55,11 @@
                     </div>
 
                     <div class="container mt-4">
+                        @auth
+                        @if (Auth::id() === $cv->user_id)
                         <a class="btn btn-success my-2" href="{{route('editCV', ['cv'=>$cv])}}" role="button">Edit</a>
+                        @endif
+                        @endauth
                         <a class="btn btn-secondary my-2" href="{{route('cvs')}}" role="button">Go back</a>
                     </div>
 

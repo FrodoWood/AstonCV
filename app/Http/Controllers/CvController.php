@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cv;
+use Illuminate\Support\Facades\Auth;
 
 class CvController extends Controller
 {
@@ -21,7 +22,12 @@ class CvController extends Controller
 
     public function create()
     {
-        return view('cvs.create');
+        if (Cv::where('user_id', (Auth::id()))->exists()) {
+            return redirect()->route('cvs');
+        } else {
+
+            return view('cvs.create');
+        }
     }
 
     public function store()
@@ -42,7 +48,10 @@ class CvController extends Controller
 
     public function edit(Cv $cv)
     {
-        return view('cvs.edit', ['cv' => $cv]);
+        if (Auth::id() === $cv->user_id) {
+            return view('cvs.edit', ['cv' => $cv]);
+        }
+        return redirect()->route('showCV', ['cv' => $cv]);
     }
 
     public function update(CV $cv)
