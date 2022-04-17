@@ -5,7 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8 ">
             <h1 class="text-center">CVs</h1>
+            @unless($exists)
             <a class="btn btn-primary my-2" href="{{route('createCV')}}" role="button">Create CV</a>
+            @else
+            <a class="btn btn-success my-2" href="{{route('editCV', ['cv'=> $cv])}}" role="button">Edit my CV</a>
+            @endunless
         </div>
     </div>
 </div>

@@ -20,3 +20,4 @@ Route::get('/cvs/create', [CvController::class, 'create'])->name('createCV')->mi
 Route::get('/cvs/{cv}/show', [CvController::class, 'show'])->name('showCV');
 Route::get('/cvs/{cv}/edit', [CvController::class, 'edit'])->name('editCV')->middleware('auth');
 Route::put('cvs/{cv}', [CvController::class, 'update'])->name('updateCV')->middleware('auth');
+Route::delete('cvs/{cv}', [CvController::class, 'delete'])->name('deleteCV')->middleware('auth');

@@ -12,8 +12,10 @@ class CvController extends Controller
     public function index()
     {
         $cvs = (Cv::all());
+        $cv = Cv::where('user_id', (Auth::id()))->first();
+        $exists = Cv::where('user_id', (Auth::id()))->exists();
 
-        return view('cvs.index', ['cvs' => $cvs]);
+        return view('cvs.index', ['cvs' => $cvs], compact(['exists', 'cv']));
     }
 
     public function show(Cv $cv)
@@ -42,6 +44,11 @@ class CvController extends Controller
             'name' => request('name'),
             'email' => request('email'),
             'keyprogramming' => request('keyprogramming'),
+            'profile' => request('profile'),
+            'education' => request('education'),
+            'URLlinks' => request('URLlinks'),
+            'user_id' => Auth::id(),
+
         ]);
 
         return redirect('/cvs');
@@ -74,5 +81,11 @@ class CvController extends Controller
             'URLlinks' => request('URLlinks'),
         ]);
         return redirect('/cvs');
+    }
+
+    public function delete(Cv $cv)
+    {
+        $cv->delete();
+        return redirect()->route('cvs');
     }
 }

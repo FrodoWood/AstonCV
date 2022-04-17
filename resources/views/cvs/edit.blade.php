@@ -65,9 +65,20 @@
                     <div class="row px-2 justify-content-center">
 
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-success">Update</button>
+                            <a class="btn btn-secondary" href="{{route('cvs')}}" role="button">Cancel</a>
                         </div>
-                        <div class="col-6 mb-3"></div>
+                        <div class="col-6">
+                            <div class="row justify-content-end">
+                                <div class="col-4">
+                                    <form action="/cvs/{{ $cv->id }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </form>
