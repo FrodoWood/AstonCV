@@ -65,7 +65,9 @@
                         <div class="col-4">
                             <button type="submit" class="btn btn-primary">Create</button>
                         </div>
-                        <div class="col-6 mb-3"></div>
+                        <div class="col-6 mb-3 text-end">
+                            <a class="btn btn-secondary" href="{{route('cvs')}}" role="button">Cancel</a>
+                        </div>
                     </div>
 
                 </form>

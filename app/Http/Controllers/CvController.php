@@ -18,6 +18,18 @@ class CvController extends Controller
         return view('cvs.index', ['cvs' => $cvs], compact(['exists', 'cv']));
     }
 
+    public function search(Request $request)
+    {
+        $search_text = $request->get('searchQuery');
+
+        $cvs = Cv::query()
+            ->where('name', 'LIKE', "%{$search_text}%")
+            ->orWhere('keyprogramming', 'LIKE', "%{$search_text}%")
+            ->get();
+
+        return view('cvs.search', compact('cvs'));
+    }
+
     public function show(Cv $cv)
     {
         return view('cvs.show', ['cv' => $cv]);
