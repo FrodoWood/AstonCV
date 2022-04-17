@@ -1,0 +1,17 @@
+
+.card:hover {
+    outline-style: solid;
+    outline-color: #a3a3a3;
+    outline-width: 2px;
+}
+
+.btn-success {
+    background-color: #26b756;
+    border-color: #2ebb7a;
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: #149459;
+    border-color: #0ca05b;
+}
