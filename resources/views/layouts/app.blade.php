@@ -22,8 +22,8 @@
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 
-<body class="">
-    <div id="app" class="vh-100">
+<body>
+    <div id="app" class="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">

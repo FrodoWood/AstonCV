@@ -15,3 +15,8 @@
     background-color: #149459;
     border-color: #0ca05b;
 }
+
+.app{
+    min-height: 100vh;
+    max-height: max-content;
+}
