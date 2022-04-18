@@ -22,8 +22,8 @@
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 
-<body>
-    <div id="app">
+<body class="">
+    <div id="app" class="vh-100">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -96,7 +96,18 @@
         <main class="py-4">
             @yield('content')
         </main>
+
     </div>
+
+    <footer class="flex-shrink-0 py-4 text-white-50 bg-secondary">
+        <div class="container text-center">
+            <small>Copyright &copy; Aston CV</small>
+            <br>
+            <small>Made by Jasraj Singh - Student ID: 210151813</small>
+        </div>
+    </footer>
+
+
 </body>
 
 </html>
